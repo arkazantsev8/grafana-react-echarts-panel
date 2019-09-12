@@ -1,0 +1,28 @@
+{
+  "name": "simple-react-panel",
+  "version": "1.0.0",
+  "description": "Grafana RSS Panel",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch"
+  },
+  "author": "Grafana Labs",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@grafana/data": "latest",
+    "@grafana/toolkit": "next",
+    "@grafana/ui": "latest"
+  },
+  "dependencies": {
+    "echarts": "^4.2.1",
+    "echarts-for-react": "^2.0.15-beta.0",
+    "jsoneditor": "^7.0.2",
+    "jsoneditor-react": "^1.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-json-editor-ajrm": "^2.5.9",
+    "react-textarea-autosize": "^7.1.0"
+  }
+}
