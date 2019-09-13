@@ -92,6 +92,7 @@ var transformData = function(data: any, how: string, params: any) {
 };
 
 export class MyPanel extends PureComponent<PanelProps<MyPanelOptions>> {
+
   render() {
     try {
       var settings = JSON.parse(this.props.options.chart_json);
@@ -119,7 +120,7 @@ export class MyPanel extends PureComponent<PanelProps<MyPanelOptions>> {
     // var opt = this.props.options.options1;
     //opt.series[0].type = this.props.options.chart_type;
     try {
-      return <ReactEcharts option={opt} style={{ height: '100%', width: '100%' }} />;
+      return <ReactEcharts option={opt} style={{ height: '100%', width: '100%' }} notMerge={true} />;
     } catch (err) {
       return <h2>JSON parsing error</h2>;
     }
