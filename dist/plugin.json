@@ -1,0 +1,29 @@
+{
+  "type": "panel",
+  "name": "Basic ECharts Panel",
+  "id": "basic-echarts-panel",
+
+  "info": {
+    "description": "Basic ECharts Panel",
+    "author": {
+      "name": "Your Name"
+    },
+    "keywords": ["Simple"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {"name": "Website", "url": "https://github.com/grafana/simple-react-panel"},
+      {"name": "License", "url": "https://github.com/grafana/simple-react-panel/blob/master/LICENSE"}
+    ],
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2019-09-17"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
