@@ -1,21 +1,21 @@
 {
   "type": "panel",
-  "name": "Basic ECharts Panel",
-  "id": "basic-echarts-panel",
+  "name": "React ECharts Panel",
+  "id": "arkazantsev8-echarts-panel",
 
   "info": {
-    "description": "Basic ECharts Panel",
+    "description": "ECharts Panel Plugin For Grafana",
     "author": {
-      "name": "Your Name"
+      "name": "Artem Kazantsev"
     },
-    "keywords": ["Simple"],
+    "keywords": ["React", "ECharts"],
     "logos": {
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
     "links": [
-      {"name": "Website", "url": "https://github.com/grafana/simple-react-panel"},
-      {"name": "License", "url": "https://github.com/grafana/simple-react-panel/blob/master/LICENSE"}
+      {"name": "Website", "url": "https://github.com/arkazantsev8/grafana-react-echarts-panel"},
+      {"name": "License", "url": "https://github.com/arkazantsev8/grafana-react-echarts-panel/blob/master/LICENSE"}
     ],
     "screenshots": [],
     "version": "%VERSION%",

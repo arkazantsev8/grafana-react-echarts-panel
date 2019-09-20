@@ -32,12 +32,65 @@ var transformData = function(data: any, how: string, params: any) {
   if ((how = 'multiseries')) {
     var x: any = [];
     var y: any = [];
+    var data2: any = {};
     var res: any = {};
 
     for (var d in data) {
+      if (! (data[d][0] in x)) {
+        x.push(data[d][0])
+      }
+      for (var y_ in data[d][1]) {
+
+        if (! (y.includes(data[d][1][y_][0]))) {
+
+          y.push(data[d][1][y_][0])
+        }
+      }
+    }
+    
+
+
+    for (var x_ in x) {
+      for (y_ in y) {
+        if (y[y_])
+        if(!(y[y_] in data2)){
+          data2[y[y_]] = []
+        }
+        for (var k=0; k<data.length; k++){
+          if (data[k][0] == x[x_]){
+            var row = data[k][1];
+
+            var result = row.reduce((acc:any, [key, value]:any) => Object.assign(acc, { [key]: value }), {});
+
+            
+            if (y[y_] in result ){
+
+
+              data2[y[y_]].push(result[y[y_]])
+
+            } else {
+              data2[y[y_]].push(null)
+            }
+
+
+          }
+        }
+      }
+    }
+
+    console.log('data2', data2) 
+    console.log(params.cumsum)
+    
+
+    x = []
+    y = data2
+
+    for (var d in data) {
+
       //console.log(data[d][1]);
       x.push(data[d][0]);
       for (var y_ in data[d][1]) {
+
         try {
           y[data[d][1][y_][0]].push(data[d][1][y_][1]);
         } catch (err) {
@@ -46,6 +99,11 @@ var transformData = function(data: any, how: string, params: any) {
         }
       }
     }
+
+    
+
+    console.log('x', x, 'y', y)
+
     var series: any = [];
     var legend: any = [];
     Object.keys(y).forEach(function(key) {
@@ -85,6 +143,7 @@ var transformData = function(data: any, how: string, params: any) {
     res.x = x;
     res.y = series;
     res.legend = legend;
+    console.log('data',data,'res', res)
     return res;
   } else {
     return {};
